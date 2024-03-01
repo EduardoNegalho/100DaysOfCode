@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background:#09135f;
+    color: #fff;
+}
+
+.title {
+    margin: 1rem 0;
+    font-size: 2.5;
+    font-weight: 300;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.fieldset {
+    width: 31.25rem;
+    height: 39.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #063773;
+}
+
+.nome, .email, .situacao, .stack, .msg-user{
+    margin-bottom: 1rem;
+}
+
+label, p {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.ipt-nome,
+.ipt-nome,
+select,
+textarea {
+    border: transparent;
+    padding: 0.5rem;
+    width: 15rem;
+}
+
+.btn {
+    padding: .5rem;
+    background-color: #00f;
+    border: transparent;
+    border-radius: .5rem;
+    color: #fff;
+    cursor: pointer;
+    width: 5rem;
+    font-size: 1rem;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa TI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="title">Pesquisa Sobre o Mercado de TI</h1>
+    <form action="" class="form">
+        <fieldset class="fieldset">
+            <div class="nome">
+                <label for="nome">Nome:</label>
+                <input class="ipt-nome" type="text" name="nome" id="nome">
+            </div>
+
+            <div class="email">
+                <label for="email">Email:</label>
+                <input class="ipt-nome" type="email" name="email" id="email">
+            </div>
+
+            <div class="situacao">
+                <label for="situacao">Informe sua situação atual:</label>
+                <select name="situacao" id="situacao">
+                    <option value="#" disabled selected>Selecione uma das opções</option>
+                    <option value="desempregado">Desempregado</option>
+                    <option value="estudando">Estudando</option>
+                    <option value="estagiario">Estágiario</option>
+                    <option value="dev-jr">Desenvolvedor Junior</option>
+                    <option value="dev-pl">Desenvolvedor Pleno</option>
+                    <option value="dev-sr">Desenvolvedor Sênior</option>
+                </select>
+            </div>
+
+            <div class="stack">
+                <p>Informe a sua stack:</p>
+                <label for="front-end">Front-End
+                    <input type="checkbox" name="stack" id="front-end">
+                </label>
+
+
+                <label for="back-end">Back-End
+                    <input type="checkbox" name="stack" id="back-end">
+                </label>
+
+                <label for="full-stack">Full-Stack
+                    <input type="checkbox" name="stack" id="full-stack">
+                </label>
+
+                <label for="mobile">Mobile
+                    <input type="checkbox" name="stack" id="mobile">
+                </label>
+
+                <label for="qa">QA
+                    <input type="checkbox" name="stack" id="qa">
+                </label>
+            </div>
+
+            <div class="msg-user">
+                <label for="msg-user">Conte sobre um pouco sobre sua vivência na área da TI:</label>
+                <textarea name="msg-user" id="msg-user" cols="30" rows="10"></textarea>
+            </div>
+
+            <div>
+                <input class="btn" type="submit" value="Enviar">
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>
