@@ -1,0 +1,41 @@
+li:nth-child(2) {
+    color: #f00;
+}
+
+li:nth-child(odd) {
+    color: #00f;
+}
+
+li:hover{
+    background-color: #777;
+}
+
+input:focus {
+    background-color: #ff0;
+}
+
+/* pseudo-elementos -> ::before e ::after */
+li::before {
+    content: "(before) ";
+    font-size: 1.125rem;
+}
+
+li:after {
+    content: " (after)";
+    font-size: 1.125rem;
+}
+/* ------ */
+
+li:first-child {
+    color: #ca9a14;
+}
+
+li:last-child {
+    color: rgb(204, 11, 188);
+}
+
+/* :not -> inverte um valor */
+
+/* li:not(:last-child) {
+    color: rgb(50, 94, 48);
+} */
