@@ -1,0 +1,10 @@
+/* Estilo aplicado ao elemento pai */
+.parent {
+    font-family: Arial, sans-serif;
+    color: blue;
+}
+
+/* Estilo aplicado ao elemento filho */
+.child {
+    font-weight: bold;
+}
