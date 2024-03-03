@@ -11,5 +11,6 @@ let multiplicacao = (num1 * num2).toFixed(2)
 let divisao = (num1 / num2).toFixed(2)
 
 alert(
-    `${num1} + ${num2} = ${soma}\n ${num1} - ${num2} = ${subtracao}\n ${num1} * ${num2} = ${multiplicacao}\n ${num1} / ${num2} = ${divisao}`
+    `${num1} + ${num2} = ${soma}\n ${num1} - ${num2} = ${subtracao}\n 
+    ${num1} * ${num2} = ${multiplicacao}\n ${num1} / ${num2} = ${divisao}`
 )
