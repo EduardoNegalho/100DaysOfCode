@@ -28,8 +28,10 @@ function execute() {
                 viewVacancy()
                 break;
             case '4':
+                registerCandidate()
                 break;
             case '5':
+                deleteAVacancy()
                 break;
             case '6':
                 alert("Encerrando o programa...")
@@ -49,7 +51,7 @@ function listVacancies() {
             mensage += `
             Índice: ${index + 1}
             Nome: ${vacancy.name}
-            Candidatos: 0
+            Candidatos: ${vacancy.candidates.length}
             ---------------------`
         })
         return alert(mensage)
@@ -61,11 +63,16 @@ function listVacancies() {
 function createAVacancy() {
     let confirmation = false
     do {
-        const vacancy = {}
+        const vacancy = {
+            name: undefined,
+            descript: undefined,
+            deadline: undefined,
+            candidates: []
+        }
 
         vacancy.name = prompt("Informe o nome da vaga")
         vacancy.descript = prompt("Digite a descrição da vaga")
-        vacancy.deadline = prompt("Informe a data limite da vaga")
+        vacancy.deadline = prompt("Informe a data limite da vaga (dd/mm/aa)")
 
         if (!vacancy.name || !vacancy.descript || !vacancy.deadline) {
             alert("Preencha todos os campos!")
@@ -95,17 +102,69 @@ function createAVacancy() {
 
 function viewVacancy() {
     const index = parseInt(prompt("Informe o índice da vaga"))
-
+    let mensage = ""
     if (index - 1 >= 0 && index - 1 < vacancies.length) {
         const vacancy = vacancies[index - 1]
-        let mensage = `
+        mensage += `
         Ìndice: ${index}
         Nome: ${vacancy.name}
         Descrição: ${vacancy.descript}
         Data Limite: ${vacancy.deadline}
+        Número de candidatos: ${vacancy.candidates.length}
+        Candidatos: ${vacancy.candidates.join(", ")}
         `
+        return alert(mensage)
     } else {
         alert("Vaga não encontrada!")
+    }
+}
+
+function registerCandidate() {
+    const candidateName = prompt("Informe o nome do candidato")
+    const index = parseInt(prompt("Informe o índice da vaga"))
+
+    if (index - 1 >= 0 && index - 1 < vacancies.length) {
+        const vacancy = vacancies[index - 1]
+        const confirmation = prompt(`
+        Vaga: ${vacancy.name}
+        Descrição: ${vacancy.descript}
+        Data limite: ${vacancy.deadline}
+
+        Nome do candidato: ${candidateName}
+
+        Você confirma esses dados? Sim ou Não
+        `).toLowerCase()
+
+        if (confirmation === "sim") {
+            vacancy.candidates.push(candidateName)
+            alert("Candidato registrado com sucesso!")
+        } else {
+            alert("Candidato não registrado!")
+        }
+    } else {
+        alert("Vaga não encontrada!")
+    }
+}
+
+function deleteAVacancy() {
+    const index = parseInt(prompt("Informe o índice da vaga"))
+    const vacancy = vacancies[index - 1]
+
+    const confirmation = prompt(`
+    Índice: ${index}
+    Nome: ${vacancy.name}
+    Descrição: ${vacancy.descript}
+    Data Limite: ${vacancy.deadline}
+    Candidatos: ${vacancy.candidates.join(", ")}
+    ------------------------------
+    Deseja excluir está vaga? Sim ou Não
+    `).toLowerCase()
+
+    if (confirmation === 'sim') {
+        vacancies.splice(index - 1, 1)
+        alert("Vaga removida com sucesso!")
+    } else {
+        alert("Vaga não removida!")
     }
 }
 
